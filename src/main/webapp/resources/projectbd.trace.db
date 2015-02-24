@@ -1,0 +1,1107 @@
+11-28 21:54:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "INSERT INTO USER(NAME)VALUES 'ADMIN'"; ожидалось "("
+Syntax error in SQL statement "INSERT INTO USER(NAME)VALUES 'ADMIN'"; expected "("; SQL statement:
+INSERT INTO USER(NAME)VALUES 'ADMIN' [42001-175]
+11-28 23:15:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Попытка создания второго первичного ключа
+Attempt to define a second primary key; SQL statement:
+ALTER TABLE PUBLIC.USER ADD PRIMARY KEY (u_id) [90017-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:110)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:70)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:128)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:113)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.executeUpdate(RemoteStatementImpl.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-02 02:28:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Значение слишком длинное для поля "PICTURE VARCHAR(255)": "'https://mediafire.com/eros/elementum.jpg?ultrices=nec&enim=nisi&lorem=volutpat&ipsum=eleifend&dolor=donec&sit=ut&amet=dolor&con... (832)"
+Value too long for column "PICTURE VARCHAR(255)": "'https://mediafire.com/eros/elementum.jpg?ultrices=nec&enim=nisi&lorem=volutpat&ipsum=eleifend&dolor=donec&sit=ut&amet=dolor&con... (832)"; SQL statement:
+insert into BUILDING (KADASTR, address, district, land, year, material, base, comment, wear, flow, line, square, picture, flats, elevator) values ('820-05-8209', 'Upham', 'Chantilly', 14.6, 2000, 'Sr', 'IV', 'Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna.', 98.55, 20, 18.14, 38.25, 'https://mediafire.com/eros/elementum.jpg?ultrices=nec&enim=nisi&lorem=volutpat&ipsum=eleifend&dolor=donec&sit=ut&amet=dolor&consectetuer=morbi&adipiscing=vel&elit=lectus&proin=in&interdum=quam&mauris=fringilla&non=rhoncus&ligula=mauris&pellentesque=enim&ultrices=leo&phasellus=rhoncus&id=sed&sapien=vestibulum&in=sit&sapien=amet&iaculis=cursus&congue=id&vivamus=turpis&metus=integer&arcu=aliquet&adipiscing=massa&molestie=id&hendrerit=lobortis&at=convallis&vulputate=tortor&vitae=risus&nisl=dapibus&aenean=augue&lectus=vel&pellentesque=accumsan&eget=tellus&nunc=nisi&donec=eu&quis=orci&orci=mauris&eget=lacinia&orci=sapien&vehicula=quis&condimentum=libero&curabitur=nullam&in=sit&libero=amet&ut=turpis&massa=elementum&volutpat=ligula&convallis=vehicula&morbi=consequat&odio=morbi&odio=a&elementum=ipsum&eu=integer&interdum=a&eu=nibh', 85, false) [22001-175]
+12-07 02:28:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "OWNERS" не найдена
+Table "OWNERS" not found; SQL statement:
+SELECT building_id, kadastr, storey, rooms, date_doc,square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owners group by n_passport, kadastr [42102-175]
+12-07 02:33:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4526888307230545" не найден
+Column "4526888307230545" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4526888307230545","Bruno M. Pace",1989),("4568711007526144","Ulla D. Benson",1976),("4487199380481612","Stacey O. Leach",1971),("4727086541568866","Mason X. Everett",1977),("4686121815396475","Dana R. Madden",1978),("4940722069330514","Maxine D. Conner",1989),("4628962598508221","Tanek E. Roberson",1992),("4974032512772820","Maggy I. Barnett",1980),("4972336927941064","Gail Y. Long",1973),("4952647885587069","Zelenia D. Suarez",1987) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4460991243366155" не найден
+Column "4460991243366155" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4460991243366155","Thomas D. Doyle",1970),("4112163523677737","Ashely H. Warner",1978),("4574395936960358","Kasimir X. Davis",1981),("4651886679558084","Garrison X. Tyson",1981),("4551669675530864","Jaden E. Santana",1991),("4501961940806352","Moana V. Norton",1984),("4285118370363489","Fay X. Lane",1975),("4448923539929094","Charlotte Z. Saunders",1991),("4302948260912673","Madeline X. Caldwell",1996),("4983238092996181","Ariel N. Norton",1987) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4636505362950265" не найден
+Column "4636505362950265" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4636505362950265","Stacey D. Lowery",1983),("4603438681177799","Tad O. Kirk",1987),("4544844221370295","Allistair O. Phelps",1993),("4716904126387087","Bernard Z. Valdez",1988),("4241618856508282","Olga J. Durham",1977),("4110470019653431","Wallace G. Parsons",1987),("4866639307979498","Davis R. Hopkins",1995),("4675211948249484","Wesley D. Kirkland",1985),("4183888927567751","Joshua M. Kerr",1978),("4649014449445535","Drew K. Estrada",1974) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4723629449075082" не найден
+Column "4723629449075082" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4723629449075082","Dieter L. Washington",1988),("4610777234798297","Honorato N. Perez",1984),("4217725456971677","Lacota E. Gould",1996),("4210828829975792","Joy H. Blankenship",1980),("4337863776786250","Kellie D. Zamora",1978),("4803847272368142","Nehru Z. Mcclain",1992),("4151550899306317","Josiah V. Marsh",1985),("4866826375294470","Mollie I. Mckee",1977),("4777879785560071","Alfonso D. Reeves",1974),("4123887827247388","Roary N. Holt",1988) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4819474260881545" не найден
+Column "4819474260881545" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4819474260881545","George I. Boyle",1971),("4238871028926222","Shelby D. Knox",1996),("4136051351344215","Erica J. Pruitt",1991),("4393870198260993","Megan T. Hood",1973),("4790757708484301","Blossom T. Burt",1990),("4587721026875076","Patrick Q. Malone",1985),("4795832139067354","Patrick F. Hudson",1995),("4975876079266898","Kyla K. Jefferson",1994),("4936644567223266","Ivory T. Mcguire",1995),("4998780400399118","Tanner U. Rodriguez",1994) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4959114172263077" не найден
+Column "4959114172263077" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4959114172263077","Gregory H. Yates",1974),("4573149930173537","Isaiah P. Riley",1985),("4602219081576910","Sonia K. Osborn",1976),("4503958393633360","Jemima D. Bruce",1980),("4290054056979713","Caryn U. Richards",1996),("4743837938085193","Silas F. Lloyd",1983),("4514428413705900","Oleg Z. Booker",1995),("4156693364959211","Remedios C. Mooney",1990),("4419049886334687","Katell B. Richard",1993),("4598317341273658","Adam L. Le",1981) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4705707814404745" не найден
+Column "4705707814404745" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4705707814404745","Miranda H. Mack",1995),("4142679335409771","Marny K. Greene",1971),("4209094576071948","Tamara T. Knowles",1971),("4823433271795510","Oleg U. Briggs",1990),("4253508165385576","Ulysses Q. Knox",1977),("4446958352858204","Joan Q. Wheeler",1991),("4627280544163655","Kaitlin D. Church",1985),("4305059064691886","Ross P. Chaney",1994),("4313784728571778","Marah L. Hester",1990),("4405160329723737","Penelope Y. Moses",1971) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4328946892358362" не найден
+Column "4328946892358362" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4328946892358362","Mercedes U. Petty",1980),("4133258989453313","Acton T. Burks",1990),("4544031359069046","Irene D. Hodge",1976),("4364998243702575","Jael P. Yates",1971),("4427129187714308","Maryam A. Clay",1977),("4334789067553359","Fulton D. Jennings",1974),("4852719270577651","Ramona T. Carver",1983),("4222961327200759","Norman G. Kirkland",1975),("4310665146820247","Cody F. Emerson",1978),("4789363837800920","Alfonso T. Alvarez",1989) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4221741727599876" не найден
+Column "4221741727599876" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4221741727599876","Jakeem Y. Gibbs",1973),("4269779319083316","Guinevere I. Weber",1989),("4362513768393546","Sebastian I. Stephens",1980),("4723960809176780","Nomlanga S. Booker",1979),("4673737713135775","Yvonne A. Hudson",1973),("4552567825373269","Baxter Q. Burnett",1977),("4467798747261983","Juliet N. Irwin",1990),("4188166126841670","Lacey R. Haney",1975),("4609261190332477","Kelly B. Holder",1991),("4786848633596675","Cyrus H. Ramsey",1975) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:33:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "4686483468115325" не найден
+Column "4686483468115325" not found; SQL statement:
+INSERT INTO `owner` (`n_passport`,`fio`,`born`) VALUES ("4686483468115325","Deanna K. Cannon",1987),("4314969004737212","Amanda O. Macias",1992),("4829527969006443","Scarlet F. Gillespie",1981),("4795578044187278","Damian W. Johns",1987),("4138402276532727","Vincent B. Parks",1988),("4983036134811117","Nevada K. Puckett",1983),("4242536397464578","Sasha Z. Kim",1996),("4665682821115473","Wynne E. Crosby",1973),("4288095199503001","Maya V. Buckner",1990),("4456321126036347","Noelani W. Rivers",1989) [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:271)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 02:38:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ошибка преобразования данных при конвертации "'829-93-7244' (OWNER: N_PASSPORT INT NOT NULL)"
+Data conversion error converting "'829-93-7244' (OWNER: N_PASSPORT INT NOT NULL)"; SQL statement:
+insert into owner (n_passport, fio, born) values ('829-93-7244', 'Phillip Rodriguez', 1991) -- ('829-93-7244', 'Phillip Rodriguez', 1991) [22018-175]
+12-07 02:41:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ошибка преобразования данных при конвертации "'5010122859083585' (OWNER: N_PASSPORT INT NOT NULL)"
+Data conversion error converting "'5010122859083585' (OWNER: N_PASSPORT INT NOT NULL)"; SQL statement:
+insert into owner (n_passport, fio, born) values ('5010122859083585', 'Martha Moreno', 1973) -- ('5010122859083585', 'Martha Moreno', 1973) [22018-175]
+12-07 02:42:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ошибка преобразования данных при конвертации "'36707263931691' (OWNER: N_PASSPORT INT NOT NULL)"
+Data conversion error converting "'36707263931691' (OWNER: N_PASSPORT INT NOT NULL)"; SQL statement:
+insert into owner (n_passport, fio, born) values ('36707263931691', 'Gerald Mills', 6067) -- ('36707263931691', 'Gerald Mills', 6067) [22018-175]
+12-07 10:11:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Невозможно преобразование строки "3/14/2014" в тип "DATE"
+Cannot parse "DATE" constant "3/14/2014"; SQL statement:
+insert into documents (doc_cod, record, document, date_doc, part) values (6838, 4904, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '3/14/2014', 89.59) -- (6838, 4904, STRINGDECODE('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'), '3/14/2014', 89.59) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:841)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: 3/14/2014
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+12-07 10:12:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Невозможно преобразование строки "2014-06-31" в тип "DATE"
+Cannot parse "DATE" constant "2014-06-31"; SQL statement:
+insert into documents (doc_cod, record, document, date_doc, part) values (6838, 4904, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', '2014-06-31', 89.59) -- (6838, 4904, STRINGDECODE('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'), '2014-06-31', 89.59) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:841)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: 2014-6-31
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:276)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+12-07 10:13:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Невозможно преобразование строки "1977" в тип "DATE"
+Cannot parse "DATE" constant "1977"; SQL statement:
+insert into documents (doc_cod, record, document, date_doc, part) values (6838, 4904, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 2014-06-31, 89.59) -- (6838, 4904, STRINGDECODE('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'), 1977, 89.59) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:841)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: 1977
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+12-07 10:14:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Невозможно преобразование строки "1977" в тип "DATE"
+Cannot parse "DATE" constant "1977"; SQL statement:
+insert into documents (doc_cod, record, document, date_doc, part) values (6838, 4904, 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+
+Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 2014-06-31, 89.59) -- (6838, 4904, STRINGDECODE('Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.'), 1977, 89.59) [22007-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:161)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:841)
+	at org.h2.table.Column.convert(Column.java:145)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:144)
+	at org.h2.command.dml.Insert.update(Insert.java:115)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:79)
+	at org.h2.command.Command.executeUpdate(Command.java:253)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:181)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: 1977
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+12-07 10:18:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "DATE_DOC" должен быть в предложении GROUP BY
+Column "DATE_DOC" must be in the GROUP BY list; SQL statement:
+SELECT building_id, kadastr, storey, rooms, date_doc,square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owner group by n_passport, kadastr [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:23:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "BUILDING_ID" должен быть в предложении GROUP BY
+Column "BUILDING_ID" must be in the GROUP BY list; SQL statement:
+SELECT building_id, kadastr, storey, rooms,square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owner group by n_passport, kadastr [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:23:21 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "STOREY" должен быть в предложении GROUP BY
+Column "STOREY" must be in the GROUP BY list; SQL statement:
+SELECT  kadastr, storey, rooms,square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owner group by n_passport, kadastr [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:23:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "ROOMS" должен быть в предложении GROUP BY
+Column "ROOMS" must be in the GROUP BY list; SQL statement:
+SELECT  kadastr,  rooms,square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owner group by n_passport, kadastr [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:23:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "SQUARE_FLAT" должен быть в предложении GROUP BY
+Column "SQUARE_FLAT" must be in the GROUP BY list; SQL statement:
+SELECT  kadastr,  square_flat, SUM (square_flat), max (date_doc) from flat, documents, building, owner group by n_passport, kadastr [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:34:13 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "KADASTR" не найден
+Column "KADASTR" not found; SQL statement:
+SELECT sum(SQUARE_FLAT) as square FROM FLAT GROUP BY kadastr [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:810)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 10:57:18 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "PART" должен быть в предложении GROUP BY
+Column "PART" must be in the GROUP BY list; SQL statement:
+SELECT 
+    N_PASSPORT, KADASTR, max(DATE_DOC) as max_date, sum(SQUARE_FLAT) as square_flat
+  from FLAT INNER JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER,DOCUMENTS
+     GROUP BY N_PASSPORT, KADASTR ORDER BY PART [90016-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:166)
+	at org.h2.command.dml.Select.queryGroup(Select.java:351)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:627)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-07 11:25:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Неоднозначное имя столбца "N_PASSPORT"
+Ambiguous column name "N_PASSPORT"; SQL statement:
+SELECT 
+    N_PASSPORT, KADASTR, max(DATE_DOC) as max_date, sum(SQUARE_FLAT) as square_flat
+    from FLAT INNER JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER,DOCUMENTS,
+        OWNER INNER JOIN DOCUMENTS on DOC_COD = N_PASSPORT
+     GROUP BY N_PASSPORT, KADASTR [90059-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:121)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:91)
+	at org.h2.expression.Comparison.mapColumns(Comparison.java:469)
+	at org.h2.expression.ConditionAndOr.mapColumns(ConditionAndOr.java:249)
+	at org.h2.command.dml.Select.mapColumns(Select.java:1136)
+	at org.h2.command.dml.Select.init(Select.java:785)
+	at org.h2.command.Parser.parseSelect(Parser.java:1625)
+	at org.h2.command.Parser.parsePrepared(Parser.java:426)
+	at org.h2.command.Parser.parse(Parser.java:298)
+	at org.h2.command.Parser.parse(Parser.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:235)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor18.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-26 23:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Неоднозначное имя столбца "N_PASSPORT"
+Ambiguous column name "N_PASSPORT"; SQL statement:
+SELECT 
+    N_PASSPORT, KADASTR, max(DATE_DOC) as max_date, sum(SQUARE_FLAT) as square_flat
+    from FLAT INNER JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER,DOCUMENTS,
+        OWNER INNER JOIN DOCUMENTS on DOC_COD = N_PASSPORT
+     GROUP BY N_PASSPORT, KADASTR [90059-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:121)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:91)
+	at org.h2.expression.Comparison.mapColumns(Comparison.java:469)
+	at org.h2.expression.ConditionAndOr.mapColumns(ConditionAndOr.java:249)
+	at org.h2.command.dml.Select.mapColumns(Select.java:1136)
+	at org.h2.command.dml.Select.init(Select.java:785)
+	at org.h2.command.Parser.parseSelect(Parser.java:1625)
+	at org.h2.command.Parser.parsePrepared(Parser.java:426)
+	at org.h2.command.Parser.parse(Parser.java:298)
+	at org.h2.command.Parser.parse(Parser.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:235)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-26 23:38:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Неоднозначное имя столбца "N_PASSPORT"
+Ambiguous column name "N_PASSPORT"; SQL statement:
+SELECT 
+    N_PASSPORT as passport, KADASTR, max(DATE_DOC) as max_date, sum(SQUARE_FLAT) as square_flat
+    from FLAT INNER JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER,DOCUMENTS,
+        OWNER INNER JOIN DOCUMENTS on DOC_COD = N_PASSPORT
+     GROUP BY N_PASSPORT, KADASTR [90059-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:121)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:91)
+	at org.h2.expression.Comparison.mapColumns(Comparison.java:469)
+	at org.h2.expression.ConditionAndOr.mapColumns(ConditionAndOr.java:249)
+	at org.h2.command.dml.Select.mapColumns(Select.java:1136)
+	at org.h2.command.dml.Select.init(Select.java:785)
+	at org.h2.command.Parser.parseSelect(Parser.java:1625)
+	at org.h2.command.Parser.parsePrepared(Parser.java:426)
+	at org.h2.command.Parser.parse(Parser.java:298)
+	at org.h2.command.Parser.parse(Parser.java:270)
+	at org.h2.command.Parser.prepareCommand(Parser.java:235)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-27 02:41:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "SELECT 
+  N_PASSPORT, KADASTR, MAX(DATE_DOC), AS MAX_DATE, SUM(SQUARE_FLAT) AS SQUARE_FLAT
+  FROM FLAT LEFT JOIN BUILDING ON KADASTR = FLAT.BUILDING_ID, OWNER, DOCUMENTS
+    GROUP BY  N_PASSPORT, KADASTR 
+
+                        
+                                    
+
+
+                        
+
+INSERT[*] INTO OWNER (N_PASSPORT, FIO, BORN) VALUES (7062, 'Bobby Montgomery', 1986) "
+Syntax error in SQL statement "SELECT 
+  N_PASSPORT, KADASTR, MAX(DATE_DOC), AS MAX_DATE, SUM(SQUARE_FLAT) AS SQUARE_FLAT
+  FROM FLAT LEFT JOIN BUILDING ON KADASTR = FLAT.BUILDING_ID, OWNER, DOCUMENTS
+    GROUP BY  N_PASSPORT, KADASTR 
+
+                        
+                                    
+
+
+                        
+
+INSERT[*] INTO OWNER (N_PASSPORT, FIO, BORN) VALUES (7062, 'Bobby Montgomery', 1986) "; SQL statement:
+SELECT 
+  n_passport, KADASTR, max(DATE_DOC), as max_date, sum(SQUARE_FLAT) as square_flat
+  from FLAT LEFT JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER, DOCUMENTS
+    GROUP BY  N_PASSPORT, KADASTR 
+
+--task 1.2 query example
+--is the same as in the first query 
+
+
+--populating OWNER table
+
+insert into owner (n_passport, fio, born) values (7062, 'Bobby Montgomery', 1986) [42000-175]
+12-27 02:41:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "AS" не найден
+Column "AS" not found; SQL statement:
+SELECT 
+  n_passport, KADASTR, max(DATE_DOC), as max_date, sum(SQUARE_FLAT) as square_flat
+  from FLAT LEFT JOIN BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER, DOCUMENTS
+    GROUP BY  N_PASSPORT, KADASTR [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.dml.Select.prepare(Select.java:810)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-27 03:39:29 database: close
+org.h2.message.DbException: Ошибка ввода/вывода: "java.io.EOFException"; "C:/Users/Владислав/IdeaProjects/semesterSpringMVC/src/main/webapp/resources/projectbd.h2.db"
+IO Exception: "java.io.EOFException"; "C:/Users/Владислав/IdeaProjects/semesterSpringMVC/src/main/webapp/resources/projectbd.h2.db" [90031-182]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convertIOException(DbException.java:330)
+	at org.h2.store.FileStore.readFully(FileStore.java:275)
+	at org.h2.store.PageStore.readPage(PageStore.java:1325)
+	at org.h2.store.PageStore.getPage(PageStore.java:749)
+	at org.h2.store.PageStreamTrunk$Iterator.next(PageStreamTrunk.java:251)
+	at org.h2.store.PageLog.free(PageLog.java:213)
+	at org.h2.store.PageStore.compact(PageStore.java:498)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1320)
+	at org.h2.engine.Database.close(Database.java:1270)
+	at org.h2.engine.DatabaseCloser.run(DatabaseCloser.java:63)
+Caused by: org.h2.jdbc.JdbcSQLException: Ошибка ввода/вывода: "java.io.EOFException"; "C:/Users/Владислав/IdeaProjects/semesterSpringMVC/src/main/webapp/resources/projectbd.h2.db"
+IO Exception: "java.io.EOFException"; "C:/Users/Владислав/IdeaProjects/semesterSpringMVC/src/main/webapp/resources/projectbd.h2.db" [90031-182]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 11 more
+Caused by: java.io.EOFException
+	at org.h2.store.fs.FileUtils.readFully(FileUtils.java:358)
+	at org.h2.store.FileStore.readFully(FileStore.java:273)
+	... 8 more
+12-27 05:05:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "FLAT_ID" не найден
+Column "FLAT_ID" not found; SQL statement:
+insert into FLAT_OWNERS (N_PASSPORT, FLAT_ID)
+    SELECT FLAT_ID, OWNER.N_PASSPORT from FLAT CROSS JOIN OWNER [42122-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:810)
+	at org.h2.command.dml.Insert.prepare(Insert.java:281)
+	at org.h2.command.Parser.prepareCommand(Parser.java:240)
+	at org.h2.engine.Session.prepareLocal(Session.java:436)
+	at org.h2.engine.Session.prepareCommand(Session.java:379)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1138)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:168)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-27 05:09:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "DELETE *[*] FROM FLAT_OWNERS "; ожидалось "identifier"
+Syntax error in SQL statement "DELETE *[*] FROM FLAT_OWNERS "; expected "identifier"; SQL statement:
+DELETE * FROM FLAT_OWners [42001-175]
+12-27 05:10:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Подзапрос выбирает более одной строки
+Scalar subquery contains more than one row; SQL statement:
+SELECT * FROM FLAT LEFT JOIN  BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER WHERE ID = (SELECT FLAT_ID FROM FLAT_OWNERS WHERE N_PASSPORT = 1110) [90053-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.expression.Subquery.getValue(Subquery.java:41)
+	at org.h2.index.IndexCondition.getCurrentValue(IndexCondition.java:135)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:110)
+	at org.h2.table.TableFilter.next(TableFilter.java:328)
+	at org.h2.command.dml.Select.queryFlat(Select.java:527)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:632)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-27 05:11:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Подзапрос выбирает более одной строки
+Scalar subquery contains more than one row; SQL statement:
+SELECT * FROM FLAT LEFT JOIN  BUILDING on KADASTR = FLAT.BUILDING_ID, OWNER WHERE ID = (SELECT FLAT_ID FROM FLAT_OWNERS WHERE N_PASSPORT = '1110') [90053-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.expression.Subquery.getValue(Subquery.java:41)
+	at org.h2.index.IndexCondition.getCurrentValue(IndexCondition.java:135)
+	at org.h2.index.IndexCursor.find(IndexCursor.java:110)
+	at org.h2.table.TableFilter.next(TableFilter.java:328)
+	at org.h2.command.dml.Select.queryFlat(Select.java:527)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:632)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+12-27 05:14:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Подзапрос выбирает более одной строки
+Scalar subquery contains more than one row; SQL statement:
+SELECT * FROM FLAT LEFT JOIN  BUILDING on KADASTR = FLAT.BUILDING_ID and ID = (SELECT  FLAT_ID FROM FLAT_OWNERS WHERE N_PASSPORT = '1110') [90053-175]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:332)
+	at org.h2.message.DbException.get(DbException.java:172)
+	at org.h2.message.DbException.get(DbException.java:149)
+	at org.h2.message.DbException.get(DbException.java:138)
+	at org.h2.expression.Subquery.getValue(Subquery.java:41)
+	at org.h2.expression.Comparison.getValue(Comparison.java:245)
+	at org.h2.expression.ConditionAndOr.getValue(ConditionAndOr.java:94)
+	at org.h2.expression.Expression.getBooleanValue(Expression.java:180)
+	at org.h2.table.TableFilter.isOk(TableFilter.java:438)
+	at org.h2.table.TableFilter.next(TableFilter.java:388)
+	at org.h2.table.TableFilter.next(TableFilter.java:398)
+	at org.h2.command.dml.Select.queryFlat(Select.java:527)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:632)
+	at org.h2.command.dml.Query.query(Query.java:314)
+	at org.h2.command.dml.Query.query(Query.java:284)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:91)
+	at org.h2.command.Command.executeQuery(Command.java:196)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:156)
+	at com.intellij.database.remote.jdbc.impl.RemoteStatementImpl.execute(RemoteStatementImpl.java:61)
+	at sun.reflect.GeneratedMethodAccessor20.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:323)
+	at sun.rmi.transport.Transport$1.run(Transport.java:178)
+	at sun.rmi.transport.Transport$1.run(Transport.java:175)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:174)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:557)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:812)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:671)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
